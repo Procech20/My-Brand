@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body class="dark">
+    <button class="theme-switcher">
+        <span class="dark">☀️</span><span class="light">🌙</span>
+    </button>
+    <main class="login-page">
+        <section class="login">
+            <div class="login-image">
+                <img src="./assets/img/login-illustration.svg" />
+            </div>
+            <div class="login-body">
+                <h2>Login</h2>
+                <form action="./blogs.html">
+                    <div class="input-field">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" />
+                        <p class="error email-error">
+                        </p>
+                    </div>
+                    <div class="input-field">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" class="" />
+                        <p class="error password-error"></p>
+                    </div>
+                    <div class="input-field">
+                        <input class="btn" type="submit" value="Login" name="login" id="login" />
+                    </div>
+                    <p class="signup-message"> Don't have an account yet? <a href="./logout.html">Create an account
+                            now </a>!</p>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="./js/theme.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

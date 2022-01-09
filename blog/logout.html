@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body class="dark">
+    <button class="theme-switcher">
+        <span class="dark">☀️</span><span class="light">🌙</span>
+    </button>
+    <main class="login-page">
+        <section class="login">
+            <div class="login-image">
+                <img src="./assets/img/signup.6006caf7.png" />
+            </div>
+            <div class="login-body">
+                <h2>Sign-up</h2>
+                <form action="./login.html">
+                    <div class="input-field">
+                        <label for="firstname">Firstname</label>
+                        <input type="text" name="firstname" id="firstname" />
+                        <p class="error firstname-error"></p>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="surname">Surname</label>
+                        <input type="text" name="surname" id="surname" />
+                        <p class="error surname-error"></p>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" />
+                        <p class="error email-error"></p>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" />
+                        <p class="error password-error">
+                        </p>
+                    </div>
+
+                    <div class="input-field">
+                        <input class="btn" type="submit" value="Create Account" name="login" id="login" />
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="./js/theme.js"></script>
+    <script src="./js/logout.js"></script>
+</body>
+
+</html>
