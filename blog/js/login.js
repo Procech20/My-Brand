@@ -4,8 +4,8 @@ const password = document.querySelector('#password');
 let em = document.querySelector('.email-error');
 let pass = document.querySelector('.password-error');
 
-let emError = ["Please input email", "Invalid Email"]
-let passError = ["Password can not be empty", "Incorrect password", "Password can not be Password"]
+let emError = ["Please input email", "Invalid Email", "User not found"];
+let passError = ["Password can not be empty", "Invalid Credentials", "Password can not be Password"]
 
 const accounts = JSON.parse(localStorage.getItem('accounts'));
 
@@ -53,4 +53,6 @@ form.addEventListener('submit', (e) => {
         localStorage.setItem("isLoggedIn", true)
         window.location.href = '/blog/blogs.html';
     }
+
+
 });
