@@ -7,15 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <script src="../js/theme.js"></script>
-    <script src="../js/navbar.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <title>Techblog</title>
 </head>
 
 <body class="dark">
     <button class="theme-switcher">
-        <span class="dark">☀️</span>
+        <span class="dark show">☀️</span>
         <span class="light">🌙</span>
     </button>
     <nav class="navbar-wrapper">
@@ -31,7 +30,7 @@
                     <a href="#">Dashboard</a>
                 </li>
                 <li class="link" id="log-btn">
-                    <a href="../login.html">Login</a>
+                    <a href="../login.html" class="log-value">Login</a>
                 </li>
             </ul>
             <button class="toggle">
@@ -43,13 +42,13 @@
         <section class="dashboard--nav">
             <ul>
                 <li class="link active">
-                    <a href="#">My articles</a>
+                    <a href="#">All articles</a>
                 </li>
                 <li class="link">
                     <a href="./users.html">Users</a>
                 </li>
                 <li class="link">
-                    <a href="./profile.html">Profile</a>
+                    <a href="./queries.html">Queries</a>
                 </li>
                 <li class="link">
                     <a href="../create.html">Create</a>
@@ -58,7 +57,7 @@
         </section>
         </section>
         <section class="dashboard--body">
-            <div class="article--container">
+            <!-- <div class="article--container">
                 <div class="article--img">
                     <img src="../assets/img/elia-pellegrini-exoy_coaujY-unsplash.jpg" />
                 </div>
@@ -75,13 +74,17 @@
                     </div>
                 </div>
                 <div class="actions">
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    <i class="fa-thin fa-trash-can"></i>
+                    <i class="fa-thin fa-pen-to-square"></i>
                 </div>
-            </div>
+            </div> -->
         </section>
         </div>
 
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/dashboard.js"></script>
 </body>
 
 

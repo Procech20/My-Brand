@@ -36,6 +36,18 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        table, th, td {
+            border: 1px solid var(--primary-color);
+        }
+
+        table {
+            width: 75vw;
+            margin-top: 8rem;
+        }
+
+        td {
+            text-align: center;
+        }
         .btn {
             background-color: var(--secondary-color) !important;
             color: var(--primary-color) !important;
@@ -231,7 +243,12 @@
         }
 
         .blog-footer {
-            margin-top: 2rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+
+        .blog-footer span:first-of-type {
+            padding-right: 8rem;
         }
 
         .blog-footer ul {
@@ -297,7 +314,7 @@
             color: var(--primary-color);
         }
 
-        .input-field input {
+        .input-field input, textarea {
             color: var(--primary-color);
             width: 100%;
             padding: 0.4rem;
@@ -305,7 +322,6 @@
             background: var(--bg-color-light);
             outline: none;
             border: 2px solid var(--primary-color);
-            cursor: pointer;
         }
 
         .create {
@@ -313,6 +329,15 @@
             flex-direction: row;
             justify-content: space-between;
             row-gap: 2rem;
+        }
+
+        .update--btn {
+            color: var(--bg-color-light);
+            font-weight: 600;
+            background: limegreen !important;
+            border: 1px solid var(--bg-color-light) !important;
+            cursor: pointer;
+            border-radius: 5px;
         }
 
         .create--btn {
@@ -344,9 +369,21 @@
         }
 
         .input-field .image-preview {
+
             height: 400px;
             overflow: hidden;
             background: var(--primary-color);
+
+        }
+        .input-field .profile-picture {
+            height: 250px;
+            width: 250px;
+            align-self: center;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--primary-color);
+            left: 40%;
+            position: relative;
         }
 
         .image-preview img {
@@ -446,7 +483,7 @@
         }
 
         .main--section {
-            margin-top: 8rem;
+            margin-top: 12rem;
         }
 
         .reactions {
@@ -457,8 +494,8 @@
         }
 
         .reactions img {
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             margin-right: 1rem;
             cursor: pointer;
             margin-top: 2rem;
@@ -565,21 +602,28 @@
         }
 
         .actions {
+            height: 100px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            width: 100%;
-            height: 200px;
+            margin-top: 3rem;
+            padding: 0 2rem 0 2rem;
         }
-        .actions i {
-            height: 50px;
-            width: 50px;
+        .actions > span {
+            background: none;
+            border: none !important;
+            cursor: pointer;
+            padding: 2rem;
         }
-        .actions i:first-of-type{
-            color: #09c372;
+        .actions svg {
+            height: 30px;
+            width: 30px;
         }
-        .actions i:last-of-type {
-            color: red;
+        .edit-blog{
+            fill: #09c372;
+        }
+        .delete-blog {
+            fill : #ff0000;
         }
         .view--more {
             cursor: pointer;

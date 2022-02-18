@@ -1,58 +1,75 @@
 const form = document.querySelector('form');
-const email = document.querySelector('#email');
-const password = document.querySelector('#password');
+let Email = document.querySelector('#email');
+let Password = document.querySelector('#password');
 let em = document.querySelector('.email-error');
 let pass = document.querySelector('.password-error');
 
 let emError = ["Please input email", "Invalid Email", "User not found"];
 let passError = ["Password can not be empty", "Invalid Credentials", "Password can not be Password"]
 
-const accounts = JSON.parse(localStorage.getItem('accounts'));
-
 form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-    let emValue = email.value.trim();
-    let passValue = password.value.trim();
+  let emValue = form.email.value.trim();
+  let passValue = form.password.value.trim();
 
-    e.preventDefault();
-    email.classList.add('success');
-    if (!emValue) {
-        em.innerHTML = emError[0];
-        email.classList.add('fail');
-    }
-    else {
-        email.classList.remove('fail');
-        email.classList.add('success');
-        em.innerHTML = "";
-    }
-    if (!passValue) {
-        pass.innerHTML = passError[0];
-        password.classList.add('fail');
-    } else {
-        password.classList.remove('fail');
-        password.classList.add('success');
-        pass.innerHTML = "";
-    }
-    if (passValue.toLowerCase() === 'password') {
+    em.innerHTML = ''
+    pass.innerHTML = ''
+  fetch('https://my-brand-pro.herokuapp.com/api/auth/login', {
+    method: 'POST',
+    headers: {
+      'content-Type': 'application/json',
+      'Access-Control-Cross-Origin': '*',
+    },
+    body: JSON.stringify({
+      email: emValue,
+      password: passValue,
+    })
+  })
+    .then(res => {
+      email === null;
+      password === null;
+      return res.json();
+    })
+    .then(data => {
+
+  if (!emValue) {
+    em.innerHTML = emError[0];
+    Email.classList.add('fail');
+  }
+  else if (!passValue) {
+    pass.innerHTML = passError[0];
+    Password.classList.add('fail');
+  } else if (passValue.toLowerCase() === 'password') {
         pass.innerHTML = passError[2];
-        password.classList.add('fail');
-    } else {
-        password.classList.remove('fail');
-        password.classList.add('success');
-        pass.innerHTML = "";
-    }
-    if (!accounts.find(e => e.email === emValue)) {
-        em.innerHTML = emError[1];
-        email.classList.add('fail');
-    }
-    else if (!accounts.find(e => e.email === emValue && e.password === passValue)) {
+        Password.classList.add('fail');
+
+      } else if (data.message === 'Invalid credentials') {
         pass.innerHTML = passError[1];
-        password.classList.add('fail');
-    } else {
-        localStorage.setItem("loggedInUser", JSON.stringify(accounts.find(e => e.email === emValue && e.password === passValue)))
-        localStorage.setItem("isLoggedIn", true)
-        window.location.href = '/blog/blogs.html';
-    }
+        Email.classList.add('fail');
+        Password.classList.add('fail');
+      } else if (data.message === 'User Not found') {
+        pass.innerHTML = passError[1];
+            Email.classList.add('fail');
+            Password.classList.add('fail');
 
-
+          } else {
+            Email.classList.add('success');
+            Password.classList.add('success');
+        console.log('Authentication Successful...', data);
+        const token = data.data.token;
+        const role = data.data.role;
+        localStorage.setItem('token', token);
+        localStorage.setItem('userRole', role);
+        localStorage.setItem("isLoggedIn", true);
+        window.location.href = './blogs.html';
+        // form.clear()
+      }
+    })
+    .catch(err => {
+      console.log('Error logging in...', err.message);
+    });
+    email = '';
+  password = '';
 });
+const validation = () => {};
