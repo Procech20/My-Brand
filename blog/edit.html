@@ -8,7 +8,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/styles.css" />
     <!--============= Logo CSS ============-->
-    <link rel="shortcut icon" href="../assets/img/ProDev-logos.jpeg" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/ProDev-logos.jpeg" type="image/x-icon">
     <title>Create blog</title>
 </head>
 
@@ -28,7 +28,7 @@
                     <a href="./components/dashboard.html">Dashboard</a>
                 </li>
                 <li class="link active">
-                    <a href="#">Create</a>
+                    <a href="#">Update</a>
                 </li>
                 <li class="link" id="log-btn">
                     <a href="login.html" class="log-value">Login</a>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="input-field">
                         <label for="content">Content</label>
-			            <textarea name="content" id="body" cols="80" rows="10"></textarea>
+			            <textarea name="content" id="content" cols="80" rows="10"></textarea>
                         <p class="create--error  body--error"></p>
                     </div>
                     <div class="input-field">
@@ -60,11 +60,11 @@
                     </div>
                     <div class="input-field">
                         <div class="image-preview">
-                            <img src="https://via.placeholder.com/728x500.png?text=Made+by+Procech" alt="preview" />
+                            <img src="https://via.placeholder.com/728x500.png?text=Made+by+Procech" alt="preview" class="blog-image" />
                         </div>
                     </div>
                     <div class="input-field create">
-                        <input type="submit" value="Create" name="create" id="create" class="create--btn" />
+                        <input type="submit" value="Update" name="create" id="update" class="update--btn" />
                         <input type="submit" value="Cancel" name="cancel" id="cancel" class="cancel--btn" />
                     </div>
                 </form>
@@ -74,7 +74,8 @@
 
     <script src="./js/theme.js"></script>
     <script src="./js/navbar.js"></script>
-    <script src="./js/create.js"></script>
+    <script src="./js/edit.js"></script>
 </body>
 
 </html>
+

@@ -823,28 +823,28 @@
                 <form action="" class="contact__form grid">
                     <div class="contact__inputs grid">
                         <div class="contact__content">
-                            <label for="" class="contact__label">Name</label>
-                            <input type="text" class="contact__input" id="nms">
+                            <label for="names" class="contact__label">Name</label>
+                            <input type="text" name="names" class="contact__input" id="nms">
                         </div>
 
                         <div class="contact__content">
-                            <label for="" class="contact__label">Email</label>
-                            <input type="email" class="contact__input" id="mail">
+                            <label for="email" class="contact__label">Email</label>
+                            <input type="email" name="email" class="contact__input" id="mail">
                         </div>
 
                     </div>
 
                     <div class="contact__content">
-                        <label for="" class="contact__label">Project</label>
-                        <input type="text" class="contact__input" id="proj">
+                        <label for="project" class="contact__label">Project</label>
+                        <input type="text" name="project" class="contact__input" id="proj">
 
                     </div>
                     <div class="contact__content">
-                        <label for="" class="contact__label">Message</label>
-                        <textarea name="" cols="0" rows="7" class="contact__input" id="mess"></textarea>
+                        <label for="message" class="contact__label">Message</label>
+                        <textarea name="message" cols="0" rows="7" class="contact__input" id="mess"></textarea>
                     </div>
                     <div>
-                        <a href="#" class="button button--flex" id="enquiry">
+                        <a class="button button--flex" id="enquiry">
                             Send Message
                             <i class="uil uil-envelope-send button__icon"></i>
                         </a>
@@ -906,6 +906,7 @@
 
     <!--==================== MAIN JS ====================-->
     <script src="/js/main.js "></script>
+    <script src="./blog/js/createQuery.js "></script>
 </body>
 
 </html>

@@ -1,12 +1,18 @@
+const role = localStorage.getItem('userRole');
+const dashboard = document.querySelector('#admin');
+const create = document.querySelector('#create');
+const log = document.querySelector('#log-btn');
+const actions = document.querySelector('.actions')
+const logValue = document.querySelector('.log-value');
+const logged = localStorage.getItem('isLoggedIn');
+
+if (logged) {
+  logValue.innerHTML = 'Logout'
+}
 const handleShowLinkMobile = () => {
     const links = document.querySelector('.navbar .links');
     links.classList.toggle('hide');
 };
-
-const dashboard = document.querySelector('#admin');
-const accounts = localStorage.getItem('accounts');
-const log = document.querySelector('#log-btn');
-
 
 document
     .querySelector('.links')
@@ -16,16 +22,20 @@ document
     .querySelector('.toggle')
     .addEventListener('click', handleShowLinkMobile);
 
-if (accounts.length > 1) {
-    log.innerHTML = 'Logout';
+if (role === 'Admin') {
     dashboard.style.display = 'block'
+    create.style.display = 'block'
 }
-if (log.innerHTML === 'Logout') {
+
+
+if (logValue.innerHTML === 'Logout') {
 
     log.addEventListener('click', () => {
         location.href = 'login.html';
-        localStorage.setItem("isLoggedIn", false);
-        localStorage.removeItem("loggedInUser")
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("token")
+        localStorage.removeItem("userRole")
+        logValue.innerHTML = 'Logout';
 
     });
 }

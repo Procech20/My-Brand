@@ -15,6 +15,33 @@
             --primary-color-light: #cccccc3d;
         }
 
+         /*============= Font & Typography =============*/
+        .root{
+            --body-font: 'Poppins', sans-serif;
+            /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px, ... */
+            --big-font-size: 2rem;
+            --h1-font-size: 1.5rem;
+            --h2-font-size: 1.25rem;
+            --h3-font-size: 1.125rem;
+            --normal-font-size: .938rem;
+            --small-font-size: .813rem;
+            --smaller-font-size: .75rem;
+            /*============= Font weight*/
+            --font-medium: 500;
+            --font-semi-bold: 600;
+        }
+
+        /* .container {
+            max-width: 768px;
+            margin-left: var(--mb-1-5);
+            margin-right: var(--mb-1-5);
+        } */
+
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -36,6 +63,18 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        table, th, td {
+            border: 1px solid var(--primary-color);
+        }
+
+        table {
+            width: 75vw;
+            margin-top: 8rem;
+        }
+
+        td {
+            text-align: center;
+        }
         .btn {
             background-color: var(--secondary-color) !important;
             color: var(--primary-color) !important;
@@ -87,6 +126,10 @@
             margin: auto;
             display: flex;
             align-items: center;
+        }
+
+        #create{
+            display: none;
         }
 
         .logo {
@@ -157,7 +200,14 @@
         }
 
         main {
-            margin-top: 4rem;
+            margin: 4rem 0;
+        }
+
+        footer {
+            margin-top: 12rem;
+            width: 100%;
+            position: relative !important;
+            bottom: 0
         }
 
         #admin {
@@ -231,13 +281,84 @@
         }
 
         .blog-footer {
-            margin-top: 2rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+
+        .blog-footer span:first-of-type {
+            padding-right: 3rem;
         }
 
         .blog-footer ul {
             display: flex;
             justify-content: space-around;
             margin-bottom: 2rem;
+        }
+
+
+        .footer {
+            padding-top: 2rem;
+        }
+
+        .footer__container {
+            /* row-gap: 3.5rem; */
+            width: 100% !important;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer__bg {
+            background-color: var(--secondary-color);
+            padding: 2rem 0 3rem;
+        }
+
+        .footer__title {
+            font-size: var(--h1-font-size);
+            margin-bottom: var(--mb-0-25);
+            margin-left: 4rem;
+            /* margin-right: 12rem; */
+        }
+
+        .footer__subtitle {
+            font-size: var(--small-font-size);
+            margin-left: 4rem;
+            margin-right: 12rem;
+        }
+
+        .footer__links {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1.5rem;
+            /* margin-left: 12rem; */
+        }
+
+        .footer__link:hover {
+            color: var(--first-color-lighter);
+        }
+
+        .footer__social {
+            font-size: 1.25rem;
+            /* margin-right: var(--mb-1-5); */
+            margin-left: 2rem;
+            margin-right: 4rem;
+        }
+
+        .footer__social:hover {
+            color: var(--bg-color-light);
+        }
+
+        .footer__copy {
+            font-size: var(--small-font-size);
+            text-align: center;
+            color: var(--text-color-light);
+            margin-top: 3rem;
+        }
+
+        .footer__title,
+        .footer__subtitle,
+        .footer__link,
+        .footer__social {
+            color: #FFF;
         }
 
         .blog-title {
@@ -297,7 +418,7 @@
             color: var(--primary-color);
         }
 
-        .input-field input {
+        .input-field input, textarea {
             color: var(--primary-color);
             width: 100%;
             padding: 0.4rem;
@@ -305,7 +426,6 @@
             background: var(--bg-color-light);
             outline: none;
             border: 2px solid var(--primary-color);
-            cursor: pointer;
         }
 
         .create {
@@ -313,6 +433,15 @@
             flex-direction: row;
             justify-content: space-between;
             row-gap: 2rem;
+        }
+
+        .update--btn {
+            color: var(--bg-color-light);
+            font-weight: 600;
+            background: limegreen !important;
+            border: 1px solid var(--bg-color-light) !important;
+            cursor: pointer;
+            border-radius: 5px;
         }
 
         .create--btn {
@@ -344,9 +473,21 @@
         }
 
         .input-field .image-preview {
+
             height: 400px;
             overflow: hidden;
             background: var(--primary-color);
+
+        }
+        .input-field .profile-picture {
+            height: 250px;
+            width: 250px;
+            align-self: center;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--primary-color);
+            left: 40%;
+            position: relative;
         }
 
         .image-preview img {
@@ -446,7 +587,7 @@
         }
 
         .main--section {
-            margin-top: 8rem;
+            margin-top: 12rem;
         }
 
         .reactions {
@@ -457,8 +598,8 @@
         }
 
         .reactions img {
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             margin-right: 1rem;
             cursor: pointer;
             margin-top: 2rem;
@@ -565,21 +706,28 @@
         }
 
         .actions {
+            height: 100px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            width: 100%;
-            height: 200px;
+            margin-top: 3rem;
+            padding: 0 2rem 0 2rem;
         }
-        .actions i {
-            height: 50px;
-            width: 50px;
+        .actions > span {
+            background: none;
+            border: none !important;
+            cursor: pointer;
+            padding: 2rem;
         }
-        .actions i:first-of-type{
-            color: #09c372;
+        .actions svg {
+            height: 30px;
+            width: 30px;
         }
-        .actions i:last-of-type {
-            color: red;
+        .edit-blog{
+            fill: #09c372;
+        }
+        .delete-blog {
+            fill : #ff0000;
         }
         .view--more {
             cursor: pointer;
