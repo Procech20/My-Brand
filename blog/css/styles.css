@@ -101,6 +101,10 @@
             align-items: center;
         }
 
+        #create{
+            display: none;
+        }
+
         .logo {
             text-decoration: none;
             font-weight: bold;

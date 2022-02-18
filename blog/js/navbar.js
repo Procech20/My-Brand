@@ -1,5 +1,6 @@
 const role = localStorage.getItem('userRole');
 const dashboard = document.querySelector('#admin');
+const create = document.querySelector('#create');
 const log = document.querySelector('#log-btn');
 const actions = document.querySelector('.actions')
 const logValue = document.querySelector('.log-value');
@@ -23,8 +24,9 @@ document
 
 if (role === 'Admin') {
     dashboard.style.display = 'block'
-    dashboard.style.display = 'flex !important'
+    create.style.display = 'block'
 }
+
 
 if (logValue.innerHTML === 'Logout') {
 
